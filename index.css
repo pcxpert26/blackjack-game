@@ -30,8 +30,23 @@ button {
     transition-duration: 0.5s;
 }
 
-button:hover {
-    color: goldenrod;
-    background: #016f32;
-    transition: ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+    button:hover {
+        color: goldenrod;
+        background: #016f32;
+        transition: ease-in-out;
+        transform: scale(0.98);
+    }
+}
+
+/* Hover state is interfering with the active state on mobile devices */
+/* Apply hover styles only on devices that support hover */
+
+@media screen and (max-width:768px) {
+    button:active {
+        color: goldenrod;
+        background: #016f32;
+        transition: ease-in-out;
+        transform: scale(0.98);
+    }
 }
